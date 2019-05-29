@@ -1,0 +1,10 @@
+<launch>
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find prac_4_exam)/urdf/prac_robot.xacro'"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find prac_4_exam)/config/second.rviz"/>
+  <node name="fake_r2d2_controller" pkg="r2d2_navigator" type="fake_r2d2_controller"/>
+  <node name="prac_pub" pkg="prac_4_exam" type="prac_pub"/>
+
+ </launch>

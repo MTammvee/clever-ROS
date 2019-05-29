@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="prac_4_exam">
+	<xacro:property name="pi" value="3.1415"/>
+
+
+	<material name="blue">
+		<color rgba="0 0 0.8 1"/>
+	</material>
+	<material name="black">
+		<color rgba="0 0 0 1"/>
+	</material>
+	<material name="white">
+		<color rgba="1 1 1 1"/>
+	</material>
+
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<box size = "1 1 0.5"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<box size = "1 1 1"/>
+			</geometry>
+		</collision>
+
+	</link>
+
+	<link name="base_footprint">
+    	</link>
+	<joint name="from_base_footprint" type="fixed">
+		<axis xyz="0 1 0" rpy="0 0 0"/>
+		<parent link="base_footprint"/>
+		<child link="base_link"/>
+		<origin xyz="0 0 0.45" rpy="0 0 0"/>
+	</joint>
+
+	<link name="wheel1">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="black"/>
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+
+	</link>
+
+	<joint name="wheel1_to_base_link" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel1"/>
+		<origin xyz="0.4 0.4 -0.35" rpy="${pi/2} 0 0"/>
+	</joint>
+	<link name="wheel2">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="black"/>
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+
+	</link>
+
+	<joint name="wheel2_to_base_link" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel2"/>
+		<origin xyz="-0.4 0.4 -0.35" rpy="${pi/2} 0 0"/>
+	</joint>
+
+	<link name="wheel3">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="black"/>
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+
+	</link>
+
+	<joint name="wheel3_to_base_link" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel3"/>
+		<origin xyz="-0.4 -0.4 -0.35" rpy="${pi/2} 0 0"/>
+	</joint>
+
+	<link name="wheel4">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="black"/>
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+
+	</link>
+
+	<joint name="wheel4_to_base_link" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel4"/>
+		<origin xyz="0.4 -0.4 -0.35" rpy="${pi/2} 0 0"/>
+	</joint>
+
+
+	<link name="wheel5">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+			<material name="black"/>
+		</visual>
+		<collision>
+			<geometry>
+				<cylinder length="0.1" radius="0.1"/>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+		</collision>
+
+	</link>
+
+	<joint name="wheel5_to_base_link" type="fixed">
+		<parent link="base_link"/>
+		<child link="wheel5"/>
+		<origin xyz="0 0 -0.35" rpy="${pi/2} 0 0"/>
+	</joint>
+  
+
+</robot>
+
